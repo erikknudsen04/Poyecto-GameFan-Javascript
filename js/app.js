@@ -49,6 +49,8 @@ stockProductos.forEach((producto) => {
             text: "¡Tu producto se ha añadido al carrito!",
             icon: "success",
             confirm: "OK",
+            timer: 2500,
+            
         })
         
         agregarAlCarrito(producto.id)
