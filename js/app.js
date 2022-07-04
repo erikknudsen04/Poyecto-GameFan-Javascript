@@ -49,7 +49,7 @@ stockProductos.forEach((producto) => {
             text: "¡Tu producto se ha añadido al carrito!",
             icon: "success",
             confirm: "OK",
-            timer: 2500,
+            timer: 1500,
             
         })
         
@@ -84,8 +84,13 @@ const agregarAlCarrito = (prodId) => {
 
 
 
-
 const eliminarDelCarrito = (prodId) => {
+    swal({
+        title: "Producto eliminado con exito",
+        icon: "warning",
+        timer: 1500,
+    
+    })
     const item = carrito.find((prod) => prod.id === prodId)
 
     const indice = carrito.indexOf(item)
@@ -108,8 +113,7 @@ const actualizarCarrito = () => {
         <p>Precio:$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
         <button onclick="eliminarDelCarrito(${prod.id})" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
-        `
-
+        `        
         contenedorCarrito.appendChild(div)
         
         localStorage.setItem('carrito', JSON.stringify(carrito))
